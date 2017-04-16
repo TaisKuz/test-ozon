@@ -1,0 +1,111 @@
+@import '/reset.styl'
+
+$iPad = 'screen and (min-width : 768px) and (max-width : 1023px)'
+$rightColumnWidth = 285px
+$imgWidth = 320px
+
+.main
+  width: 100%
+  background-color: #fff
+  overflow: hidden
+  height: 100%
+
+  &-contentWrapper
+    display: flex
+    height: calc(3 * 1296px)
+    width: 1024px
+    margin: 0 auto
+    flex-wrap: wrap
+    align-items: baseline
+    flex-direction: column
+    flex-flow: column wrap
+    @media $iPad
+      width: 768px
+      height: 100%
+
+.instagramItem
+  display: inline-block
+  width: 320px
+  margin: 20px 30px 15px 0
+  background-color: #fff
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.75)
+  border-radius: 3px
+  &:nth-child(3n+0)
+    margin-right: 0
+    @media $iPad
+      margin-right: auto
+  @media $iPad
+    position: relative
+    width: 650px
+    margin: 20px auto 15px
+
+  &-header
+    padding: 15px
+    @media $iPad
+      position: absolute
+      left: $imgWidth
+      width: $rightColumnWidth
+      border-bottom: 1px solid #e0e0e0
+      margin: 20px
+      padding: 15px 0 10px
+
+  &-userIcon
+    display: inline-block
+    border-radius: 50%
+    width: 50px
+    height: 50px
+    float: left
+    margin: 0 10px 10px 0
+
+  &-titleWrapper
+    display: inline-block
+    position: relative
+    width: 77%
+
+  &-userName
+    margin-top: 5px
+    font-weight 700
+
+  &-createdTime
+    position: absolute
+    font-weight: 700
+    display: inline-block
+    right: 0
+    opacity: .5
+    top: calc(50% - 5px)
+
+  &-img
+    width: $imgWidth
+    @media $iPad
+      display: inline-block
+      float: left
+
+  &-descriptionWrapper
+    padding: 20px 15px 30px
+    @media $iPad
+      position: absolute
+      left: $imgWidth
+      top: 105px
+      width: $rightColumnWidth
+      padding-left: 20px
+
+  &-iconHeart
+    display: inline-block
+    font-size: 16px
+    float: left
+    margin-right: 10px
+    width: 20px
+    height: 20px
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    background-image: url("/../assets/iconHeart.png")
+    &:hover
+      cursor: pointer
+
+  &-likesCount
+    display: inline-block
+
+  &-description
+    margin-top: 15px
+    font-size: 14px
